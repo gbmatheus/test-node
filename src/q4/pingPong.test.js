@@ -6,7 +6,8 @@ describe('Function Async Ping', () => {
   test('It should error for a delay bigger than 3', async () => {
     const err = await ping(4);
     
-    expect(err).toEqual('Delay bigger than 3');
+    // expect(err).toEqual('Delay bigger than 3');
+    expect(err).toEqual(new Error('Delay bigger than 3'));
 
   })
 

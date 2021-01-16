@@ -1,5 +1,4 @@
 async function ping(delay) {
-  let pong = 'ping';
   try {
 
     if(delay === undefined) {
@@ -20,7 +19,7 @@ async function ping(delay) {
     return resultPromiseDelay;
 
   } catch (error) {
-    return error.message;
+    return error;
   }
 }
 
