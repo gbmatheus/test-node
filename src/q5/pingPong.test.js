@@ -35,5 +35,18 @@ describe("Function Async Ping", () => {
     expect(resultPing).toEqual(['pong', 'error', 'pong']);
   });
 
+  test('It should return pong or error for array random', async () => {
+    const delaysRandom = createArrayRandom(10);
+    const resultPingArry = await pingArray(delaysRandom);
+
+    const returnExpectedForPingArray = delaysRandom.map(delay => {
+      return delay > 3 ? 'error' : 'pong';
+    })
+
+    expect(resultPingArry).toEqual(returnExpectedForPingArray);
+
+  })
+
+
 
 });
